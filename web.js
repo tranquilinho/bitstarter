@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
     var index_contents=new Buffer(1024);
-    fs.readFileSync("index.html", function (err, data) {
+    fs.readFileSync("index.html", "ascii", function (err, data) {
 	if (err) throw err;
 	index_contents.write(data);
     });
