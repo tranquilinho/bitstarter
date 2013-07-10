@@ -56,19 +56,27 @@ var checkHtmlFile = function(htmlfile, checksfile) {
     return out;
 };
 
-var cheerioURL = function(url) {
-    return cheerio.load(rest.get(url));
-};
 
 var checkHtmlURL = function(url, checksfile) {
-    $ = cheerioURL(url);
+    rest.get(url).on('complete', function(result) {
+	if (result instanceof Error) {
+	    console.log('URL Error: ' + result.message);
+	} else {
+
+    $ = cheerio.load(result);
+
     var checks = loadChecks(checksfile).sort();
     var out = {};
     for(var ii in checks) {
         var present = $(checks[ii]).length > 0;
         out[checks[ii]] = present;
     }
-    return out;
+	var outJson = JSON.stringify(out,null,4);
+	console.log(outJson);
+	    return out;
+	}
+    });
+
 };
 
 var clone = function(fn) {
@@ -86,13 +94,17 @@ if(require.main == module) {
     if(program.file){
 	var checkJson = checkHtmlFile(program.file, program.checks);
 	var outJson = JSON.stringify(checkJson, null, 4);
+	console.log(outJson);
     }else if(program.url){
 	var checkJson = checkHtmlURL(program.url, program.checks);
 	var outJson = JSON.stringify(checkJson, null, 4);
+	console.log(outJson);
 	}
-    console.log(outJson);
+
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
 
-// run with ./grader.js --checks checks.json --file index.html
+// run with...
+// ./grader.js --checks checks.json --file index.html
+// ./grader.js --checks checks.json --url http://evening-stream-9207.herokuapp.com/
