@@ -7,6 +7,8 @@
     <!-- In order to serve files, we would need to setup web.js...
     <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css"> -->
     <link type="text/css" rel="stylesheet"  href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
+    <link type="text/css" rel="stylesheet"  href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <!-- Google fonts - http://www.google.com/fonts -->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500|Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
     
@@ -100,8 +102,10 @@
       </div>
     </div>
 
+
+<div class="container">
+
     <!-- Heading / subheading. Widths in the grid are set with span: span12 = 12 grid columns -->
-    <div class="container">
       <div class="row-fluid heading">
         <div class="span12">
           <h1>Product</h1>
@@ -113,7 +117,8 @@
         </div>
      </div>
 
-      <div class="row-fluid pitch">
+     <!-- Introduction: pitch, actions... -->
+     <div class="row-fluid pitch">
         <div class="span6 offset1 video">
           <img class="img-polaroid" src="http://placehold.it/480x300">
         </div>
@@ -145,15 +150,17 @@
             </div>
 	</div>
 
-            <div class="order">
-              Order
-            </div>
-            <div class="social">
-              Social
-            </div>
-          </div>
-	</div>
-      </div>	
+        <div class="span6 offset3 order">
+              <button class="btn btn-success btn-large">Preorder</button>
+        </div>
+
+        <div class="span8 offset2 social">
+              <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
+              <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
+        </div>
+      </div> <!-- pitch -->
+</div> <!-- container -->
+
 
       <div class="row section1">
         <div class="span12">
