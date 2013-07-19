@@ -7,6 +7,9 @@
     <!-- In order to serve files, we would need to setup web.js...
     <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css"> -->
     <link type="text/css" rel="stylesheet"  href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
+    <!-- Google fonts - http://www.google.com/fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500|Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -15,6 +18,7 @@
       .container {
         width: 960px;
       }
+
       p.lead {
         padding-top: 15px;
       }
@@ -38,10 +42,19 @@
       div.row {
         border: 1px solid;
       }
+      /* Heading - google fonts */
+      body{
+      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      }
+      .heading, .subheading{
+      font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      text-align:center;
+      }
     </style>
   </head>
   <body>
 
+    <!-- Navigation bar -->
     <div class="navbar navbar-inverse navba-fixed-top">
       <div class="navbar-inner">
 	<div class="row navigation">
@@ -57,17 +70,19 @@
       </div>
     </div>
 
+    <!-- Heading / subheading -->
     <div class="container">
-      <div class="row heading">
+      <div class="row-fluid heading">
         <div class="span12">
-          <h1>Bitstarter Title</h1>
+          <h1>Product</h1>
         </div>
       </div> 
-     <div class="row subheading">
+     <div class="row-fluid subheading">
         <div class="span12">
-          <p class="lead">This is my first bitstarter project.</p>
+          <p class="lead">One sentence description.</p>
         </div>
       </div>
+
       <div class="row pitch">
         <div class="span6 video">
           Video
